@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<!-- DOCTYPE: le dice al navegador que este documento es HTML5 -->
+<html lang="es">
+<!-- html: la etiqueta raiz; lang="es" indica que el contenido esta en espanol -->
+<head>
+    <!-- head: informacion SOBRE la pagina (no se ve en la ventana) -->
+    <meta charset="UTF-8">
+    <!-- charset UTF-8: permite tildes, enie y simbolos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- viewport: la pagina se adapta al ancho del celular -->
+    <title>Ahorra energía en casa</title>
+    <!-- title: el texto que aparece en la pestana del navegador -->
+    <!-- Bootstrap: una hoja de estilos YA HECHA que se carga desde internet (CDN).
+         Con solo poner sus "clases" en las etiquetas, la pagina se ve ordenada. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+    /* Fondo general de todas las páginas */
+    body {
+        background-color: #f0f5f2;
+        color: #263238;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Encabezado principal */
+    header {
+        background-color: #123047 !important;
+        color: white !important;
+        border-bottom: 5px solid #20a464;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+        font-weight: bold;
+    }
+
+    /* Menú de navegación */
+    header .nav {
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    header .nav .nav-link {
+        background-color: #ffffff;
+        color: #123047 !important;
+        font-weight: bold;
+        border: 2px solid #20a464;
+        border-radius: 8px;
+        padding: 10px 16px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Color al pasar el cursor */
+    header .nav .nav-link:hover {
+        background-color: #20a464;
+        color: #ffffff !important;
+    }
+
+    /* Página actualmente seleccionada */
+    header .nav .nav-link.active {
+        background-color: #20a464;
+        color: #ffffff !important;
+        border-color: #ffffff;
+    }
+
+    /* Títulos de las secciones */
+    h2, h3 {
+        color: #123047;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    /* Tablas */
+    .table {
+        background-color: white;
+        border-color: #cbd8d1;
+    }
+
+    .table thead th {
+        background-color: #123047;
+        color: white;
+    }
+
+    .table caption {
+        color: #123047;
+        font-weight: bold;
+    }
+
+    /* Formularios y grupos de campos */
+    fieldset {
+        background-color: #ffffff;
+        border-color: #20a464 !important;
+    }
+
+    legend {
+        color: #123047;
+        font-weight: bold;
+    }
+
+    .form-control, .form-select {
+        border: 1px solid #9aafa3;
+    }
+
+    .form-control:focus, .form-select:focus {
+        border-color: #20a464;
+        box-shadow: 0 0 0 0.2rem rgba(32, 164, 100, 0.2);
+    }
+
+    /* Botón principal */
+    .btn-primary {
+        background-color: #16834f;
+        border-color: #16834f;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: #10683e;
+        border-color: #10683e;
+    }
+
+    /* Botón secundario */
+    .btn-secondary {
+        background-color: #526575;
+        border-color: #526575;
+        color: white;
+    }
+
+    .btn-secondary:hover {
+        background-color: #354653;
+        border-color: #354653;
+    }
+
+    /* Imágenes */
+    figure img {
+        border-radius: 8px;
+        margin-bottom: 8px;
+    }
+
+    figcaption {
+        color: #526575;
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+
+    /* Pie de página */
+    footer {
+        border-top: 2px solid #cbd8d1;
+        padding-top: 15px;
+        color: #526575 !important;
+    }
+
+    /* Adaptación para pantallas pequeñas */
+    @media (max-width: 576px) {
+        header .nav .nav-link {
+            padding: 8px 10px;
+            font-size: 0.9rem;
+        }
+    }
+    </style>
+</head>
+<body class="container py-3">
+    <!-- class="container": Bootstrap centra el contenido; py-3 = espacio arriba y abajo -->
+    <!-- header: el ENCABEZADO de la pagina -->
+    <!-- p-4 = relleno; mb-4 = margen abajo; bg-primary text-white = fondo azul y letra blanca; rounded = esquinas redondas -->
+    <header class="p-4 mb-4 bg-primary text-white rounded">
+
+        <h1>Ahorra energía en casa</h1>
+        <p>Con El Niño 2026 la energía subió. Esta página explica cuánto cuesta y cómo ahorrar.</p>
+        <!-- nav: el MENU de navegacion entre las paginas del sitio -->
+        <!-- nav nav-pills: menu con botones redondeados; cada enlace lleva class="nav-link" -->
+        <nav class="nav nav-pills">
+            <!-- a href: un ENLACE; aqui apunta a otro archivo del mismo sitio -->
+            <a class="nav-link text-white" href="index.html">Inicio</a>
+            <a class="nav-link text-white" href="equipos.html">Equipos de mi casa</a>
+            <a class="nav-link text-white" href="registro.html">Registrar un equipo</a>
+            <a class="nav-link text-white" href="mi-factura.html">Mi factura</a>
+            <a class="nav-link text-white active" href="encuesta.html" aria-current="page">Encuesta</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+        <h1> Comparativa del consumo de la factura personal con el consumo de los equipos del hogar  </h1>
+
+        <p>Aunque el consumo de Energia en la tabla de los equipos es un promedio estimado, podernos dar una idea
+            de cuales son los equipos que mas consumen semanalmente, cual es el que mas se utiliza y que costos en la 
+            factura representan.
+        </p>
+        </section>
+        <section>
+        <h3>
+            Factura de Energia Septiembre 2026
+        </h3>
+        <img class="img-fluid" src="img/Factura_Energia.jpeg" alt="Factura de Energia Septiembre 2026" width="450">
+        <p>
+            El costo del Kwh que se aplico para el mes de septiembre fue de <strong> 960 COP</strong> algo muy similar al que muestra
+            la imagen de la grafica de XM donde el precio del Kwh era de <strong>942 COP</strong>,  el precio mas alto del año por lo que
+            se aplicaria para las facturas del mes de septiembre. 
+        </p>
+
+        </section>
+        <section>
+        <h3> Tabla de Consumo del hogar X Mes del 2026 </h3>
+        <table class="table-striped table-bordered"> 
+            <thead>
+                <tr>
+                    <th rowspan="1">Mes</th>
+                    <th rowspan="1">Kwh</th>
+                    <th rowspan="1">Costo aprox.</th>
+                </tr>
+            </thead> 
+            <tbody>
+                <tr><td>Octubre (2025)</td><td>113</td><td>100.078,45</td>
+                <tr><td>Abril</td><td>134</td><td>36.046</td>
+                <tr><td>Mayo </td><td>121</td><td>61.105</td>
+                <tr><td>Junio</td><td>127</td><td>74.802</td>
+                <tr><td>Julio </td><td>111</td><td>87.690</td>
+                <tr><td>Agosto</td><td>124</td><td>116.808</td>
+                <tr><td>Septiembre</td><td>114</td><td>77.178</td>
+                <tr><td>Actual</td><td>131</td><td>125.804,54</td>
+            </tbody>
+
+        </table>  
+        </section>
+        <section>
+        <h2>Comparación del gasto del consumo promedio semanal vs el consumo total de Kwh en la factura</h2>
+        <p>
+            En la tabla de equipos podemos observar que el total de esos 4 elecctrodomesticos consumen
+            alrededor de 51.66 kWh promedio por semana. Poniendo un gasto energetico elevado. 
+
+            Pero si observamos bien en la factura este costo no es tan elevado. Se puede observar que
+            el consumo de energia se promedia. Pueden haber semanas que es muy inferior a ese valor que Tenemos
+            como referencia en la tabla. 
+
+            En cambio, si tomamos como referencia el  el consumo semanal 51.66 kWh por semana, entre las 4 semanas del Mes
+            sumaria un consumo total de 206,64 Kwh, algo muy desproporcionado. 
+
+            Yo sugeria que el consumo de cada electrodomestico depende tambien de los modos de ahorro de energetico que trae cada 
+            electrodomestico.
+        </p>
+        </section>
+        <section>
+
+        </section> 
+        <section>
+            <h2>Consejos para ahorrar en consumo de Energia para mi hogar</h2>
+            <p>
+                Si bien el agua actual mente es un recurso que viene escaseando en los por la falta de lluvia,
+                es necesario tener en cuenta que este recurso se utiliza para generar energia. Por eso deacuerdo
+                a mis datos hago los siguientes recomendaciones:
+            </p>
+
+            <ul>
+                <li>Solo utilizar la lavadora hasta el nivel de agua que queda arraz del nivel de la ropa.</li>
+                <li>Ya que el agua del último ciclo de la lavadora sale muy limpia, se puede utilizar esa agua en otras areas:
+                    como para regar las plantas, limpiar tennis, limpiar los vidrios de las ventanas o enjuagar algun vehiculo.
+                    Esto con el objetivo de disminuir el desperdicio de agua para evitar racionamientos en la ciudad y poder lograr
+                    en comunidad el control del precio del kwh generado por los embalses.
+                </li>
+                <li>Aumentar los grados de la nevera si no se tiene mucha comida. Esto con el fin de que la nevera en temperaturas
+                    muy bajas no tenga que consumir tanta energia si no tiene mucha comidad, esto debido a que la nevera permanece
+                    conectada a la energia 24/7.
+                </li>
+            </ul>
+        </section>        
+
+
+    </main>
+    <footer class="mt-4 text-muted">
+        <p>Ingeniería Web I · IU Digital de Antioquia · 2026-2</p>
+    </footer>
+</body> 

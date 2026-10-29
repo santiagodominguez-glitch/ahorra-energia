@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!-- Página para encuestar los hábitos de consumo de energía de una familia -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de consumo de energía</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+    /* Fondo general de todas las páginas */
+    body {
+        background-color: #f0f5f2;
+        color: #263238;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Encabezado principal */
+    header {
+        background-color: #123047 !important;
+        color: white !important;
+        border-bottom: 5px solid #20a464;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+        font-weight: bold;
+    }
+
+    /* Menú de navegación */
+    header .nav {
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    header .nav .nav-link {
+        background-color: #ffffff;
+        color: #123047 !important;
+        font-weight: bold;
+        border: 2px solid #20a464;
+        border-radius: 8px;
+        padding: 10px 16px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Color al pasar el cursor */
+    header .nav .nav-link:hover {
+        background-color: #20a464;
+        color: #ffffff !important;
+    }
+
+    /* Página actualmente seleccionada */
+    header .nav .nav-link.active {
+        background-color: #20a464;
+        color: #ffffff !important;
+        border-color: #ffffff;
+    }
+
+    /* Títulos de las secciones */
+    h2, h3 {
+        color: #123047;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    /* Tablas */
+    .table {
+        background-color: white;
+        border-color: #cbd8d1;
+    }
+
+    .table thead th {
+        background-color: #123047;
+        color: white;
+    }
+
+    .table caption {
+        color: #123047;
+        font-weight: bold;
+    }
+
+    /* Formularios y grupos de campos */
+    fieldset {
+        background-color: #ffffff;
+        border-color: #20a464 !important;
+    }
+
+    legend {
+        color: #123047;
+        font-weight: bold;
+    }
+
+    .form-control, .form-select {
+        border: 1px solid #9aafa3;
+    }
+
+    .form-control:focus, .form-select:focus {
+        border-color: #20a464;
+        box-shadow: 0 0 0 0.2rem rgba(32, 164, 100, 0.2);
+    }
+
+    /* Botón principal */
+    .btn-primary {
+        background-color: #16834f;
+        border-color: #16834f;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: #10683e;
+        border-color: #10683e;
+    }
+
+    /* Botón secundario */
+    .btn-secondary {
+        background-color: #526575;
+        border-color: #526575;
+        color: white;
+    }
+
+    .btn-secondary:hover {
+        background-color: #354653;
+        border-color: #354653;
+    }
+
+    /* Imágenes */
+    figure img {
+        border-radius: 8px;
+        margin-bottom: 8px;
+    }
+
+    figcaption {
+        color: #526575;
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+
+    /* Pie de página */
+    footer {
+        border-top: 2px solid #cbd8d1;
+        padding-top: 15px;
+        color: #526575 !important;
+    }
+
+    /* Adaptación para pantallas pequeñas */
+    @media (max-width: 576px) {
+        header .nav .nav-link {
+            padding: 8px 10px;
+            font-size: 0.9rem;
+        }
+    }
+    </style>
+</head>
+<body class="container py-3">
+    <header class="p-4 mb-4 bg-primary text-white rounded">
+        <h1>Encuesta de consumo de energía</h1>
+        <p>Cuéntanos cuáles son los hábitos de consumo de energía de tu familia.</p>
+
+        <nav class="nav nav-pills">
+            <a class="nav-link text-white" href="index.html">Inicio</a>
+            <a class="nav-link text-white" href="equipos.html">Equipos de mi casa</a>
+            <a class="nav-link text-white" href="registro.html">Registrar un equipo</a>
+            <a class="nav-link text-white" href="mi-factura.html">Mi factura</a>
+            <a class="nav-link text-white active" href="encuesta.html" aria-current="page">Encuesta</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Hábitos de consumo familiar</h2>
+        <p>Responde las siguientes preguntas para conocer mejor el consumo de energía en tu hogar.</p>
+
+        <form action="encuesta.html" method="get">
+            <fieldset class="border rounded p-3 mb-3">
+                <legend class="float-none w-auto px-2">Datos de la familia</legend>
+
+                <div class="mb-3">
+                    <label for="nombreFamilia" class="form-label">Nombre de la familia o persona encuestada:</label>
+                    <input class="form-control" type="text" id="nombreFamilia" name="nombreFamilia" placeholder="Ej.: Familia Rodriguez" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Correo electrónico:</label>
+                    <input class="form-control" type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="personas" class="form-label">¿Cuántas personas viven en el hogar?</label>
+                    <input class="form-control" type="number" id="personas" name="personas" min="1" max="30" step="1" required>
+                    <div class="form-text">Ingresa un número entre 1 y 30.</div>
+                </div>
+            </fieldset>
+
+            <fieldset class="border rounded p-3 mb-3">
+                <legend class="float-none w-auto px-2">Uso de energía</legend>
+
+                <div class="mb-3">
+                    <label for="horasTV" class="form-label">En promedio, ¿cuántas horas al día usan el televisor?</label>
+                    <input class="form-control" type="number" id="horasTV" name="horasTV" min="0" max="24" step="0.5" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="ahorro" class="form-label">¿Qué tan seguido aplican medidas para ahorrar energía?</label>
+                    <input class="form-range" type="range" id="ahorro" name="ahorro" min="1" max="5" value="3" step="1">
+                    <div class="d-flex justify-content-between">
+                        <span>Poco frecuente</span>
+                        <span>Muy frecuente</span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="equipoMayor" class="form-label">¿Cuál equipo consideran que consume más energía?</label>
+                    <select class="form-select" id="equipoMayor" name="equipoMayor" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="nevera">Nevera</option>
+                        <option value="ducha">Ducha eléctrica</option>
+                        <option value="lavadora">Lavadora</option>
+                        <option value="televisor">Televisor</option>
+                        <option value="computador">Computador</option>
+                        <option value="otro">Otro</option>
+                        <option value="no_sabe">No sabe</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <span class="form-label d-block">¿En qué momento del día usan más los electrodomésticos?</span>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="manana" name="momento" value="manana" required>
+                        <label class="form-check-label" for="manana">En la mañana</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="tarde" name="momento" value="tarde">
+                        <label class="form-check-label" for="tarde">En la tarde</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="noche" name="momento" value="noche">
+                        <label class="form-check-label" for="noche">En la noche (6pm - 9pm)</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <span class="form-label d-block">¿Qué acciones realizan para ahorrar energía? (Puedes elegir varias)</span>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="apagarLuces" name="acciones[]" value="apagarLuces">
+                        <label class="form-check-label" for="apagarLuces">Apagar las luces al salir de una habitación</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="desconectar" name="acciones[]" value="desconectar">
+                        <label class="form-check-label" for="desconectar">Desconectar equipos que no se usan</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="duchasCortas" name="acciones[]" value="duchasCortas">
+                        <label class="form-check-label" for="duchasCortas">Tomar duchas cortas</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="lavadoraLlena" name="acciones[]" value="lavadoraLlena">
+                        <label class="form-check-label" for="lavadoraLlena">Usar la lavadora con el agua a nivel de la ropa</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="aguaLavadora" name="acciones[]" value="aguaLavadora">
+                        <label class="form-check-label" for="aguaLavadora">Usar el agua del último ciclo de la lavadora en otras areas del hogar</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="observaciones" class="form-label">¿Qué otros hábitos o ideas tienen para reducir el consumo de energía?</label>
+                    <textarea class="form-control" id="observaciones" name="observaciones" rows="4"
+                              placeholder="Escribe tus comentarios aquí..."></textarea>
+                </div>
+            </fieldset>
+
+            <button class="btn btn-primary" type="submit">Enviar encuesta</button>
+            <button class="btn btn-secondary" type="reset">Borrar respuestas</button>
+        </form>
+    </main>
+
+    <footer class="mt-4 text-muted">
+        <p>Ingeniería Web I · IU Digital de Antioquia · 2026-2</p>
+    </footer>
+</body>
+</html>
